@@ -29,6 +29,7 @@ function Navbar() {
           <span className="logo-dot">.</span>
         </a>
 
+        {/* Navigation Menu */}
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <a 
@@ -40,19 +41,35 @@ function Navbar() {
               {link.name}
             </a>
           ))}
+          
+          {/* Social Icons - Only appear in mobile menu when open */}
           <div className="nav-social-mobile">
-            <a href="https://github.com/shaheedadany" target="_blank"><FaGithub /></a>
-            <a href="https://linkedin.com/in/mhd-shaheed" target="_blank"><FaLinkedin /></a>
-            <a href="mailto:shaheedmhd4@gmail.com"><FaEnvelope /></a>
+            <a href="https://github.com/shaheedadany" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/mhd-shaheed" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+            <a href="mailto:shaheedmhd4@gmail.com">
+              <FaEnvelope />
+            </a>
           </div>
         </div>
 
+        {/* Social Icons - Desktop only (hidden on mobile) */}
         <div className="nav-social">
-          <a href="https://github.com/shaheedadany" target="_blank"><FaGithub /></a>
-          <a href="https://linkedin.com/in/mhd-shaheed" target="_blank"><FaLinkedin /></a>
-          <a href="mailto:shaheedmhd4@gmail.com"><FaEnvelope /></a>
+          <a href="https://github.com/shaheedadany" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/mhd-shaheed" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="mailto:shaheedmhd4@gmail.com">
+            <FaEnvelope />
+          </a>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
